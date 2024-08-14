@@ -1,0 +1,205 @@
+---
+const TESTIMONIALS = [
+    {
+        title: 'Abogado Arias',
+        image: '/testimonials/abogadoArias.png'
+    },
+    {
+        title: 'Contador',
+        image: '/testimonials/contador.png'
+    },
+    {
+        title: 'Abogado Vargas',
+        image: '/testimonials/abogadoVargas.png'
+    },
+    {
+        title: 'Gestoria',
+        image: '/testimonials/gestoria.png'
+    }
+]
+---
+
+<section class='flex justify-center flex-col items-center'>
+    <div>
+        <h2
+            class='text-2xl text-center font-bold tracking-tight text-dark sm:text-5xl dark:text-white text-shadow'
+        >
+            Nuestro trabajo es avalado por nuestros clientes!
+        </h2>
+        <p
+            class='mt-6 text-lg mb-10 text-center text-gray-800 dark:text-gray-300'
+        >
+            Conocé algunas de las opiniones que hemos recibido por nuestro
+            trabajo.
+        </p>
+    </div>
+    <div
+        id='indicators-carousel'
+        class='relative w-[300px] md:w-[500px] items-center justify-center'
+        data-carousel='static'
+    >
+        <!-- Carousel wrapper -->
+        <div class='relative h-48 overflow-hidden rounded-3xl md:h-[25em]'>
+            {
+                TESTIMONIALS.map(({ image, title }) => (
+                    <div
+                        class='hidden duration-700 ease-in-out'
+                        data-carousel-item='active'
+                    >
+                        <img
+                            alt={title}
+                            class='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+                            loading='lazy'
+                            src={image}
+                        />
+                    </div>
+                ))
+            }
+        </div>
+        <!-- Slider indicators -->
+        <div
+            class='absolute z-30 flex -translate-x-1/2 space-x-2 rtl:space-x-reverse bottom-1 left-1/2'
+        >
+            <button
+                type='button'
+                class='w-3 h-3 rounded-full bg-white'
+                aria-current='true'
+                aria-label='Slide 1'
+                data-carousel-slide-to='0'
+            ></button>
+            <button
+                type='button'
+                class='w-3 h-3 rounded-full bg-white'
+                aria-current='false'
+                aria-label='Slide 2'
+                data-carousel-slide-to='1'
+            ></button>
+            <button
+                type='button'
+                class='w-3 h-3 rounded-full bg-white'
+                aria-current='false'
+                aria-label='Slide 3'
+                data-carousel-slide-to='2'
+            ></button>
+            <button
+                type='button'
+                class='w-3 h-3 rounded-full bg-white'
+                aria-current='false'
+                aria-label='Slide 4'
+                data-carousel-slide-to='3'
+            ></button>
+            <button
+                type='button'
+                class='w-3 h-3 rounded-full bg-white'
+                aria-current='false'
+                aria-label='Slide 5'
+                data-carousel-slide-to='4'
+            ></button>
+        </div>
+        <!-- Slider controls -->
+        <button
+            type='button'
+            class='absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none'
+            data-carousel-prev
+        >
+            <span
+                class='inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none'
+            >
+                <svg
+                    class='w-4 h-4 text-white rtl:rotate-180'
+                    aria-hidden='true'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 6 10'
+                >
+                    <path
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M5 1 1 5l4 4'
+                    ></path>
+                </svg>
+                <span class='sr-only'>Previous</span>
+            </span>
+        </button>
+        <button
+            type='button'
+            class='absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none'
+            data-carousel-next
+        >
+            <span
+                class='inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none'
+            >
+                <svg
+                    class='w-4 h-4 text-white rtl:rotate-180'
+                    aria-hidden='true'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 6 10'
+                >
+                    <path
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='m1 9 4-4-4-4'
+                    ></path>
+                </svg>
+                <span class='sr-only'>Next</span>
+            </span>
+        </button>
+    </div>
+</section>
+<script
+    src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js'
+></script>
+
+<style>
+    section {
+        position: relative;
+        height: 50%;
+    }
+
+    section {
+        font-family:
+            Helvetica Neue,
+            Helvetica,
+            Arial,
+            sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    swiper-container {
+        width: 70%;
+        height: 50%;
+    }
+
+    swiper-slide {
+        text-align: center;
+        font-size: 18px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    swiper-slide img {
+        display: block;
+        width: 70%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 5%;
+    }
+
+    swiper-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mySwiper {
+        color: #139700;
+    }
+</style>
