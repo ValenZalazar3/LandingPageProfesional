@@ -7,6 +7,7 @@ import Benefits from '@/components/Benefits.astro'
 import Calendly from '@/components/Calendly.astro'
 import SectionContainer from '@/components/SectionContainer.astro'
 import Steps from '@/components/Steps.astro'
+import Testimonials from '@/components/Testimonials.astro'
 ---
 
 <Layout
@@ -48,5 +49,12 @@ import Steps from '@/components/Steps.astro'
 		</SectionContainer>
 		<SectionContainer id='calendly' />
 		<Calendly />
+
+		<SectionContainer
+			class='py-14'
+			id='steps'
+		>
+			<Testimonials />
+		</SectionContainer>
 	</div>
 </Layout>
